@@ -33,7 +33,7 @@ group = www-data
 ;                            (IPv6 and IPv4-mapped) on a specific port;
 ;   '/path/to/unix/socket' - to listen on a unix socket.
 ; Note: This value is mandatory.
-listen = 10.4.1.0:62150
+listen = 127.0.0.1:9000
 
 ; Set listen(2) backlog.
 ; Default Value: 511 (-1 on FreeBSD and OpenBSD)
