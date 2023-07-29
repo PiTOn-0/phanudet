@@ -58,9 +58,8 @@
     define('GRAPH_FONT',dirname(__FILE__).'/VeraBd.ttf');
 
     // Font to use for SVG graphs
-    define('SVG_FONT', 'Verdana');                                                                                                                                                  
+    define('SVG_FONT', 'Verdana');
     // Default theme
     define('DEFAULT_COLORSCHEME', 'light');
 
 ?>
-	
