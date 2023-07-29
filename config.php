@@ -60,6 +60,6 @@
     // Font to use for SVG graphs
     define('SVG_FONT', 'Verdana');
     // Default theme
-    define('DEFAULT_COLORSCHEME', 'night');
+    define('DEFAULT_COLORSCHEME', 'light');
 
 ?>
