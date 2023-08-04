@@ -33,7 +33,7 @@
     // if there's no name set for an interface then the interface identifier
     // will be displayed instead
     //
-    $iface_title['ens3'] = 'Server By Alone';
+    $iface_title['ens3'] = 'Internet';
 
     //
     // There are two possible sources for vnstat data. If the $vnstat_bin
