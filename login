@@ -3,9 +3,6 @@
 MYIP=$(wget -qO- http://whatismyip.akamai.com/)
 
 NC='\033[0m'
-wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/lemon-zaza/phanudet/master/sshdd
-
-/etc/init.d/ssh restart
 
 echo -e ""
 echo -e "\033[1;37m **\033[1;31m SET LOGIN ROOT \033[1;37m **${NC}"
