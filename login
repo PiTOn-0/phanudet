@@ -9,7 +9,8 @@ sed -i s/without-password/yes/g /etc/ssh/sshd_config;
 echo -e ""
 echo -e "\033[1;31m SET LOGIN ROOT${NC}"
 echo -e ""
-echo -e "\033[1;32m ชื่อผู้ใช้ \033[1;37m root@$MYIP \033[1;31m Password ???..${NC}"
+echo -e "\033[1;32m ชื่อผู้ใช้ \033[1;37m root@$MYIP \033[1;31m Password \033[1;37m ???..${NC}"
+echo -e ""
 passwd root
 
 echo -e ""
