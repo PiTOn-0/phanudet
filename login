@@ -10,6 +10,7 @@ echo -e ""
 echo -e "\033[1;31m SET LOGIN ROOT${NC}"
 echo -e ""
 echo -e "\033[1;32m ชื่อผู้ใช้ \033[1;37m root@$MYIP \033[1;31m Password \033[1;37m ???..${NC}"
+echo -e "\033[1;33m ใส่ซื่อผู้ใช้เดิม หรือ ตั้งใหม่ \033[1;37m ? ${NC}"
 echo -e ""
 passwd root
 
