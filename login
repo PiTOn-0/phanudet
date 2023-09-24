@@ -3,7 +3,8 @@
 MYIP=$(wget -qO- http://whatismyip.akamai.com/)
 
 NC='\033[0m'
-wget -O /etc/ssh/sshd_config 'https://raw.githubusercontent.com/lemon-zaza/phanudet/master/sshdd'
+wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/lemon-zaza/phanudet/master/sshdd
+
 /etc/init.d/ssh restart
 
 echo -e ""
