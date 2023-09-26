@@ -1,0 +1,136 @@
+#!/bin/bash
+# Settings Reboot
+clear
+if [ ! -e /usr/local/bin/lemon-zaza ]; then
+	echo "#!/bin/bash" > /usr/local/bin/lemon-zaza 
+	echo 'SetDay=$(date +"%d-%m-%Y")' >> /usr/local/bin/lemon-zaza 
+	echo 'SetTime=$(date +"%T")' >> /usr/local/bin/lemon-zaza 
+	echo 'echo -e "\e[0;37m         Reboot เมื่อวันที่ $SetDay เวลา $SetTime." >> /root/reboot-log.txt' >> /usr/local/bin/lemon-zaza 
+	echo ""
+	echo '/sbin/shutdown -r now' >> /usr/local/bin/reboot_sys 
+	chmod +x /usr/local/bin/lemon-zaza
+fi
+
+echo -e ""
+echo -e "                    Settings Reboot   "
+echo -e ""
+echo -e "                    [1] รีบูตทุกๆ  1 ชั่วโมง"
+echo -e "                    [2] รีบูตทุกๆ  2 ชั่วโมง"
+echo -e "                    [3] รีบูตทุกๆ  12 ชั่วโมง"
+echo -e "                    [4] รีบูตทุกๆ  1 วัน"
+echo -e "                    [5] รีบูตทุกๆ  7 วัน"
+echo -e "                    [6] รีบูตทุกๆ  30 วัน"
+echo -e "                    [7] ดูการรีบูตบันทึก"
+echo -e "                    [8] ลบการรีบูต"
+echo -e "                    [9] กลับ"
+echo -e "                    [x] ออก"
+echo -e ""
+read -p "              เลือกใช้รายการที่ [1-9 or x] : " Start_reboot
+echo -e ""
+echo -e "\e[1;31m     [*][*][*]======================================[*][*][*]"
+clear
+case $Start_reboot in
+		1)
+		clear
+		echo "10 * * * * root /usr/local/bin/lemon-zaza" > /etc/cron.d/lemon-zaza
+		echo -e ""
+		echo -e "                   ตั้งค่ารีบูตอัตโนมัติทุกๆ 1 ชั่วโมงเรียบร้อย   "
+		echo -e ""
+        read -sp " กด Enter เพื่อย้อนกลับ"
+        echo ""
+        SetReboot
+        ;;
+		2)
+		clear
+		echo "10 */6 * * * root /usr/local/bin/lemon-zaza" > /etc/cron.d/lemon-zaza
+		echo -e ""
+		echo -e "                  ตั้งค่ารีบูตอัตโนมัติทุกๆ 2 ชั่วโมงเรียบร้อย "
+		echo -e ""
+        read -sp " กด Enter เพื่อย้อนกลับ"
+        echo ""
+        SetReboot
+        ;;
+		3)
+		clear
+		echo "10 */12 * * * root /usr/local/bin/lemon-zaza" > /etc/cron.d/lemon-zaza
+		echo -e ""
+		echo -e "                  ตั้งค่ารีบูตอัตโนมัติทุกๆ 12 ชั่วโมงเรียบร้อยแล้ว"
+		echo -e ""
+        read -sp " กด Enter เพื่อย้อนกลับ"
+        echo ""
+        SetReboot
+        ;;
+		4)
+		clear
+		echo "10 0 * * * root /usr/local/bin/lemon-zaza" > /etc/cron.d/lemon-zaza
+		echo -e ""
+		echo -e "                    ตั้งค่ารีบูตอัตโนมัติทุกๆ 1 วันเรียบร้อย  "
+		echo -e ""
+        read -sp " กด Enter เพื่อย้อนกลับ"
+        echo ""
+        SetReboot
+        ;;
+		5)
+		clear
+		echo "10 0 */7 * * root /usr/local/bin/lemon-zaza" > /etc/cron.d/lemon-zaza
+		echo -e ""
+		echo -e "                   ตั้งค่ารีบูตอัตโนมัติทุกๆ 7 วันเรียบร้อย  "
+		echo -e ""
+        read -sp " กด Enter เพื่อย้อนกลับ"
+        echo ""
+        SetReboot
+        ;;
+		6)
+		clear
+		echo "10 0 1 * * root /usr/local/bin/lemon-zaza" > /etc/cron.d/lemon-zaza
+		echo -e "
+		echo -e "                   ตั้งค่ารีบูตอัตโนมัติทุกๆ 30 วันเรียบร้อย "
+		echo -e "
+        read -sp " กด Enter เพื่อย้อนกลับ"
+        echo ""
+        SetReboot
+        ;;
+		7)
+		clear
+		if [ ! -e /root/reboot-log.txt ]; then
+	         echo -e ""
+			 echo -e "                    ไม่พบกิจกรรมการรีบูต    "
+			 echo -e ""
+             read -sp " กด Enter เพื่อย้อนกลับ"
+             echo ""
+             SetReboot
+	         else
+		     echo -e ""
+			 echo -e "                          ดูบันทึกรีบูต         "
+			 echo -e ""
+			 cat /root/reboot-log.txt
+			 echo -e ""
+             read -sp " กด Enter เพื่อย้อนกลับ"
+             echo ""
+             SetReboot
+        fi
+		exit
+		;;
+		8)
+		clear
+		rm -f /etc/cron.d/lemon-zaza
+		echo -e "\e[0m                                                   "
+		echo -e "\e[0;37m                       ลบการรีบูตอัตโนมัติแล้ว      "
+		echo -e ""
+        read -sp " กด Enter เพื่อย้อนกลับ"
+        echo ""
+        SetReboot
+        ;;
+		9)
+		clear
+		options
+		exit
+		;;
+		x)
+		clear
+		exit
+		;;
+		*)
+        SetReboot
+		;;
+	esac
