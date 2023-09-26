@@ -113,8 +113,7 @@ case $Start_reboot in
 		8)
 		clear
 		rm -f /etc/cron.d/lemon-zaza
-		echo -e "\e[0m                                                   "
-		echo -e "\e[0;37m                       ลบการรีบูตอัตโนมัติแล้ว      "
+		echo -e "                       ลบการรีบูตอัตโนมัติแล้ว      "
 		echo -e ""
         read -sp " กด Enter เพื่อย้อนกลับ"
         echo ""
