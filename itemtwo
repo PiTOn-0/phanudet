@@ -1,25 +1,128 @@
 #!/bin/bash
 
-NC='\033[0m'
-MYIP=$(wget -qO- http://whatismyip.akamai.com/)
+if [ ! -e /usr/local/bin/Reboot-Server ]; then
+	echo '#!/bin/bash' > /usr/local/bin/Reboot-Server
+	echo '' >> /usr/local/bin/Reboot-Server
+	echo 'DATE=$(date +"%m-%d-%Y")' >> /usr/local/bin/Reboot-Server
+	echo 'TIME=$(date +"%T")' >> /usr/local/bin/Reboot-Server
+	echo 'echo "รีบูทเมื่อวันที่ $DATE เวลา $TIME" >> /usr/local/bin/Reboot-Log' >> /usr/local/bin/Reboot-Server
+	echo '/sbin/shutdown -r now' >> /usr/local/bin/Reboot-Server
+	chmod +x /usr/local/bin/Reboot-Server
+fi
 
-clear
-echo -e ""
-echo -e ""
-echo -e "\E[44;1;37m          Donate At 0802686710 thank you.           \E[0m"
-echo -e "\033[1;31m====================================================    "
-echo -e ""
-echo -e "\033[1;32m* \033[1;37mสคริปต์ \033[1;31mUbuntu20.4-18.4 \033[1;37mอัพเดทล่าสุด \033[1;32m2023"
-echo -e "\033[1;32m* \033[1;31m(\033[1;37m 03 \033[1;31m)\033[1;37m เมื่อเปิดใช้จะไม่สามารถ login Pritunl ได้ "
-echo -e "\033[1;37mในขณะใช้ server อื่น "
-echo -e ""
-echo -e "\033[1;32m* \033[1;37mMENU  \033[1;37m:\033[1;31m Script"
-echo -e ""
-echo -e "\033[1;31m ➢ \033[0;37m01 \033[1;32m• \033[1;31m[\033[1;33m แก้ใข Proxy    \033[1;31m]"
-echo -e "\033[1;31m ➢ \033[0;37m02 \033[1;32m• \033[1;31m[\033[1;33m รีสตาร์ท Proxy  \033[1;31m]"
-echo -e "\033[1;31m ➢ \033[0;37m03 \033[1;32m• \033[1;31m[\033[1;33m เปิดใช้งาน UFW  \033[1;31m]"
-echo -e ""
-echo -e "\033[1;32m* ไอพีเซิร์ฟเวอร์ \033[1;31m: \033[1;37m$MYIP"
-echo -e "\033[1;31m====================================================    "
-echo -e ""
-echo -ne " \033[1;33m?\033[1;37m${NC} "
+echo ""
+echo -e "ตั้งค่าเวลารีบูทเซิฟเวอร์อัตโนมัติ  "
+echo ""
+echo -e "|1| รีบูททุกๆ  1 ชั่วโมง"
+echo -e "|2| รีบูททุกๆ  6 ชั่วโมง"
+echo -e "|3| รีบูททุกๆ 12 ชั่วโมง"
+echo -e "|4| รีบูททุกๆ  1 วัน"
+echo -e "|5| รีบูททุกๆ  7 วัน"
+echo -e "|6| รีบูททุกๆ 30 วัน"
+echo -e "|7| หยุดการรีบูทเซิฟเวอร์"
+echo -e "|8| ตรวจสอบดูบันทึกการรีบูทเซิฟเวอร์"
+echo -e "|9| ลบบันทึกการรีบูทเซิฟเวอร์"
+echo ""
+read -p "เลือกหัวข้อที่ต้องการใช้งาน : " REBOOT
+
+case $REBOOT in
+
+	1)
+
+echo "0 * * * * root /usr/local/bin/Reboot-Server" > /etc/cron.d/Reboot-Server
+echo ""
+echo "ตั้งค่ารีบูทเซิฟเวอร์ทุกๆ 1 ชั่วโมงเรียบร้อยแล้ว"
+echo ""
+exit
+
+	;;
+
+	2)
+
+echo "0 */6 * * * root /usr/local/bin/Reboot-Server" > /etc/cron.d/Reboot-Server
+echo ""
+echo "ตั้งค่ารีบูทเซิฟเวอร์ทุกๆ 6 ชั่วโมงเรียบร้อยแล้ว"
+echo ""
+exit
+
+	;;
+
+	3)
+
+echo "0 */12 * * * root /usr/local/bin/Reboot-Server" > /etc/cron.d/Reboot-Server
+echo ""
+echo "ตั้งค่ารีบูทเซิฟเวอร์ทุกๆ 12 ชั่วโมงเรียบร้อยแล้ว"
+echo ""
+exit
+
+	;;
+
+	4)
+
+echo "0 0 * * * root /usr/local/bin/Reboot-Server" > /etc/cron.d/Reboot-Server
+echo ""
+echo "ตั้งค่ารีบูทเซิฟเวอร์ทุกๆ 1 วันเรียบร้อยแล้ว"
+echo ""
+exit
+
+	;;
+
+	5)
+
+echo "0 0 * * MON root /usr/local/bin/Reboot-Server" > /etc/cron.d/Reboot-Server
+echo ""
+echo "ตั้งค่ารีบูทเซิฟเวอร์ทุกๆ 7 วันเรียบร้อยแล้ว"
+echo ""
+exit
+
+	;;
+
+	6)
+
+echo "0 0 1 * * root /usr/local/bin/Reboot-Server" > /etc/cron.d/Reboot-Server
+echo ""
+echo "ตั้งค่ารีบูทเซิฟเวอร์ทุกๆ 30 วันเรียบร้อยแล้ว"
+echo ""
+exit
+
+	;;
+
+	7)
+
+rm -rf /usr/local/bin/Reboot-Server
+echo ""
+echo "หยุดการรีบูทเซิฟเวอร์เรียบร้อยแล้ว"
+echo ""
+exit
+
+	;;
+
+	8)
+
+if [[ ! -e /usr/local/bin/Reboot-Log ]]; then
+	echo ""
+	echo "ไม่มีบันทึกการรีบูทเซิฟเวอร์"
+	echo ""
+	exit
+else
+	echo ""
+	cat /usr/local/bin/Reboot-Log
+	echo ""
+	exit
+fi
+
+	;;
+
+	9)
+
+rm -rf /usr/local/bin/Reboot-Log
+echo ""
+echo "ลบบันทึกการรีบูทเซิฟเวอร์เรียบร้อยแล้ว"
+echo ""
+exit
+
+	;;
+
+esac
+
+	;;
