@@ -7,7 +7,7 @@ if [ ! -e /usr/local/bin/lemon-zaza ]; then
 	echo 'SetTime=$(date +"%T")' >> /usr/local/bin/lemon-zaza 
 	echo 'echo -e "\e[0;37m         Reboot เมื่อวันที่ $SetDay เวลา $SetTime." >> /root/reboot-log.txt' >> /usr/local/bin/lemon-zaza 
 	echo ""
-	echo '/sbin/shutdown -r now' >> /usr/local/bin/reboot_sys 
+	echo '/sbin/shutdown -r now' >> /usr/local/bin/lemon-zaza 
 	chmod +x /usr/local/bin/lemon-zaza
 fi
 
