@@ -100,7 +100,7 @@ case $Start_reboot in
              SetReboot
 	         else
 		     echo -e ""
-			 echo -e "                **    บันทึก : สถานะ Reboot ในช่วงวันที่และเวลา    **   "
+			 echo -e "         **    บันทึก : สถานะ Reboot ในช่วงวันที่และเวลา    **   "
 			 echo -e ""
 			 cat /root/reboot-log.txt
 			 echo -e ""
