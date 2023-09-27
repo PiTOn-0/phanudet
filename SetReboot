@@ -6,7 +6,7 @@ if [ ! -e /usr/local/bin/lemon_zaza ]; then
         echo '' >> /usr/local/bin/lemon_zaza
 	echo 'Day_B=$(date +"%d-%m-%Y")' >> /usr/local/bin/lemon_zaza 
 	echo 'Time_B=$(date +"%T")' >> /usr/local/bin/lemon_zaza 
-	echo 'echo -e "\e[0;37m         Successfully Reboot On $Day_B Time $Time_B." >> /root/reboot-log' >> /usr/local/bin/lemon_zaza 
+	echo 'echo -e "\e[0;37m         Successfully Reboot On $Day_B Time $Time_B." >> /root/reboot-log.txt' >> /usr/local/bin/lemon_zaza 
 	echo ""
 	echo '/sbin/shutdown -r now' >> /usr/local/bin/lemon_zaza 
 	chmod +x /usr/local/bin/lemon_zaza
@@ -92,7 +92,7 @@ case $Start_reboot in
         ;;
 		7)
 		clear
-		if [ ! -e /root/reboot-log ]; then
+		if [ ! -e /root/reboot-log.txt ]; then
 	         echo -e ""
 			 echo -e "                    ไม่พบการรีบูต    "
 			 echo -e ""
@@ -103,7 +103,7 @@ case $Start_reboot in
 		     echo -e ""
 			 echo -e "                          ดูบันทึกรีบูต         "
 			 echo -e ""
-			 cat /root/reboot-log
+			 cat /root/reboot-log.txt
 			 echo -e ""
              read -sp " กด Enter เพื่อย้อนกลับ"
              echo ""
