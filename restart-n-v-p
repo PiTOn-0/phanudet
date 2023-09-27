@@ -12,5 +12,5 @@ service nginx restart
 service vnstat restart
 
 echo ""
-echo -e "\033[1;37m กลับไปที่เมนู \033[1;31m:\033[1;32m m${NC}"
+echo -e "\033[1;37m กลับไปที่เมนู \033[1;31m:\033[1;32m 00${NC}"
 echo ""
