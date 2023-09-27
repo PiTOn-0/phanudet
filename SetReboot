@@ -2,10 +2,11 @@
 # Settings Reboot
 clear
 if [ ! -e /usr/local/bin/lemon_zaza ]; then
-	echo "#!/bin/bash" > /usr/local/bin/lemon_zaza 
-	echo 'tanggal=$(date +"%d-%m-%Y")' >> /usr/local/bin/lemon_zaza 
-	echo 'waktu=$(date +"%T")' >> /usr/local/bin/lemon_zaza 
-	echo 'echo -e "\e[0;37m         Successfully Reboot On $tanggal Time $waktu." >> /root/reboot-log.txt' >> /usr/local/bin/lemon_zaza 
+	echo "#!/bin/bash" > /usr/local/bin/lemon_zaza
+        echo '' >> /usr/local/bin/lemon_zaza
+	echo 'Day_B=$(date +"%d-%m-%Y")' >> /usr/local/bin/lemon_zaza 
+	echo 'Time_B=$(date +"%T")' >> /usr/local/bin/lemon_zaza 
+	echo 'echo -e "\e[0;37m         Successfully Reboot On $Day_B Time $Time_B." >> /root/reboot-log' >> /usr/local/bin/lemon_zaza 
 	echo ""
 	echo '/sbin/shutdown -r now' >> /usr/local/bin/lemon_zaza 
 	chmod +x /usr/local/bin/lemon_zaza
@@ -14,16 +15,16 @@ fi
 echo -e ""
 echo -e " Settings Reboot "
 echo -e ""
-echo -e "\033[1;31m ➢ \033[0;37m 1 \033[1;32m• \033[1;31m[  รีบูตทุกๆ  1 ชั่วโมง  \033[1;31m]"
-echo -e "\033[1;31m ➢ \033[0;37m 2 \033[1;32m• \033[1;31m[  รีบูตทุกๆ  6 ชั่วโมง  \033[1;31m]"
-echo -e "\033[1;31m ➢ \033[0;37m 3 \033[1;32m• \033[1;31m[  รีบูตทุกๆ  12 ชั่วโมง\033[1;31m]"
-echo -e "\033[1;31m ➢ \033[0;37m 4 \033[1;32m• \033[1;31m[  รีบูตทุกๆ  1 วัน       \033[1;31m]"
-echo -e "\033[1;31m ➢ \033[0;37m 5 \033[1;32m• \033[1;31m[  รีบูตทุกๆ  7 วัน       \033[1;31m]"
-echo -e "\033[1;31m ➢ \033[0;37m 6 \033[1;32m• \033[1;31m[  รีบูตทุกๆ  30 วัน     \033[1;31m]"
-echo -e "\033[1;31m ➢ \033[0;37m 7 \033[1;32m• \033[1;31m[  ดูการรีบูตบันทึก     \033[1;31m]"
-echo -e "\033[1;31m ➢ \033[0;37m 8 \033[1;32m• \033[1;31m[  ลบการรีบูต             \033[1;31m]"
-echo -e "\033[1;31m ➢ \033[0;37m 9 \033[1;32m• \033[1;31m[  กลับ                       \033[1;31m]"
-echo -e "\033[1;31m ➢ \033[0;31m x \033[1;32m• \033[1;31m[  กลับไปเมนูหลัก      \033[1;31m]"
+echo -e " [ 1 ] รีบูตทุกๆ  1 ชั่วโมง"
+echo -e " [ 2 ] รีบูตทุกๆ  2 ชั่วโมง"
+echo -e " [ 3 ] รีบูตทุกๆ  12 ชั่วโมง"
+echo -e " [ 4 ] รีบูตทุกๆ  1 วัน"
+echo -e " [ 5 ] รีบูตทุกๆ  7 วัน"
+echo -e " [ 6 ] รีบูตทุกๆ  30 วัน"
+echo -e " [ 7 ] ดูการรีบูตบันทึก"
+echo -e " [ 8 ] ลบการรีบูต"
+echo -e " [ 9 ] กลับ"
+echo -e " [ x ] กลับไปเมนูหลัก"
 echo -e ""
 read -p "              เลือกใช้รายการที่ [1-9 or x] : " Start_reboot
 echo -e "" 
@@ -91,7 +92,7 @@ case $Start_reboot in
         ;;
 		7)
 		clear
-		if [ ! -e /root/reboot-log.txt ]; then
+		if [ ! -e /root/reboot-log ]; then
 	         echo -e ""
 			 echo -e "                    ไม่พบการรีบูต    "
 			 echo -e ""
@@ -102,7 +103,7 @@ case $Start_reboot in
 		     echo -e ""
 			 echo -e "                          ดูบันทึกรีบูต         "
 			 echo -e ""
-			 cat /root/reboot-log.txt
+			 cat /root/reboot-log
 			 echo -e ""
              read -sp " กด Enter เพื่อย้อนกลับ"
              echo ""
