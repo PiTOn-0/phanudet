@@ -5,7 +5,7 @@ if [ ! -e /usr/local/bin/lemon_zaza ]; then
 	echo "#!/bin/bash" > /usr/local/bin/lemon_zaza
         echo 'Day_B=$(date +"%d-%m-%Y")' >> /usr/local/bin/lemon_zaza 
 	echo 'Time_B=$(date +"%T")' >> /usr/local/bin/lemon_zaza 
-	echo 'echo -e "         รีบูตสำเร็จแล้ว $Day_B เวลา $Time_B.${NC}" >> /root/reboot-log.txt' >> /usr/local/bin/lemon_zaza 
+	echo 'echo -e "         รีบูตสำเร็จแล้ว $Day_B เวลา $Time_B." >> /root/reboot-log.txt' >> /usr/local/bin/lemon_zaza 
 	echo ""
 	echo '/sbin/shutdown -r now' >> /usr/local/bin/lemon_zaza 
 	chmod +x /usr/local/bin/lemon_zaza
