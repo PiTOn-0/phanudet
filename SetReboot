@@ -1,18 +1,17 @@
 #!/bin/bash
 # Settings Reboot
-NC='\033[0m'
 clear
 if [ ! -e /usr/local/bin/lemon_zaza ]; then
 	echo "#!/bin/bash" > /usr/local/bin/lemon_zaza
         echo 'Day_B=$(date +"%d-%m-%Y")' >> /usr/local/bin/lemon_zaza 
 	echo 'Time_B=$(date +"%T")' >> /usr/local/bin/lemon_zaza 
-	echo 'echo -e "\033[1;31m         รีบูตสำเร็จแล้ว $Day_B เวลา $Time_B.${NC}" >> /root/reboot-log.txt' >> /usr/local/bin/lemon_zaza 
+	echo 'echo -e "         รีบูตสำเร็จแล้ว $Day_B เวลา $Time_B.${NC}" >> /root/reboot-log.txt' >> /usr/local/bin/lemon_zaza 
 	echo ""
 	echo '/sbin/shutdown -r now' >> /usr/local/bin/lemon_zaza 
 	chmod +x /usr/local/bin/lemon_zaza
 fi
 
-echo -e "${NC}"
+echo -e ""
 echo -e "        **     SETTINGS REBOOT AUTO     ** "
 echo -e ""
 echo -e "                [1] รีบูตทุกๆ  1 ชั่วโมง"
@@ -93,14 +92,14 @@ case $Start_reboot in
 		7)
 		clear
 		if [ ! -e /root/reboot-log.txt ]; then
-	         echo -e "${NC}"
+	         echo -e ""
 			 echo -e "                    ไม่พบการรีบูต    "
 			 echo -e ""
              read -sp " กด Enter เพื่อย้อนกลับ"
              echo ""
              SetReboot
 	         else
-		     echo -e "${NC}"
+		     echo -e ""
 			 echo -e "                    บันทึกการรีบูต         "
 			 echo -e ""
 			 cat /root/reboot-log.txt
