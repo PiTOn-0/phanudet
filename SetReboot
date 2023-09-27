@@ -16,7 +16,7 @@ echo -e ""
 echo -e " Settings Reboot "
 echo -e ""
 echo -e " [ 1 ] รีบูตทุกๆ  1 ชั่วโมง"
-echo -e " [ 2 ] รีบูตทุกๆ  2 ชั่วโมง"
+echo -e " [ 2 ] รีบูตทุกๆ  6 ชั่วโมง"
 echo -e " [ 3 ] รีบูตทุกๆ  12 ชั่วโมง"
 echo -e " [ 4 ] รีบูตทุกๆ  1 วัน"
 echo -e " [ 5 ] รีบูตทุกๆ  7 วัน"
@@ -123,7 +123,7 @@ case $Start_reboot in
         ;;
 		9)
 		clear
-		spark01
+		06
 		exit
 		;;
 		x)
