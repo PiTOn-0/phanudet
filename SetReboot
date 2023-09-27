@@ -37,7 +37,7 @@ case $Start_reboot in
 		echo -e ""
         read -sp " กด Enter เพื่อย้อนกลับ"
         echo ""
-        06
+        SetReboot
         ;;
 		2)
 		clear
@@ -47,7 +47,7 @@ case $Start_reboot in
 		echo -e ""
         read -sp " กด Enter เพื่อย้อนกลับ"
         echo ""
-        06
+        SetReboot
         ;;
 		3)
 		clear
@@ -57,7 +57,7 @@ case $Start_reboot in
 		echo -e ""
         read -sp " กด Enter เพื่อย้อนกลับ"
         echo ""
-        06
+        SetReboot
         ;;
 		4)
 		clear
@@ -67,7 +67,7 @@ case $Start_reboot in
 		echo -e ""
         read -sp " กด Enter เพื่อย้อนกลับ"
         echo ""
-        06
+        SetReboot
         ;;
 		5)
 		clear
@@ -77,7 +77,7 @@ case $Start_reboot in
 		echo -e ""
         read -sp " กด Enter เพื่อย้อนกลับ"
         echo ""
-        06
+        SetReboot
         ;;
 		6)
 		clear
@@ -87,7 +87,7 @@ case $Start_reboot in
 		echo -e "
         read -sp " กด Enter เพื่อย้อนกลับ"
         echo ""
-        06
+        SetReboot
         ;;
 		7)
 		clear
@@ -97,7 +97,7 @@ case $Start_reboot in
 			 echo -e ""
              read -sp " กด Enter เพื่อย้อนกลับ"
              echo ""
-             06
+             SetReboot
 	         else
 		     echo -e ""
 			 echo -e "                          ดูบันทึกรีบูต         "
@@ -106,7 +106,7 @@ case $Start_reboot in
 			 echo -e ""
              read -sp " กด Enter เพื่อย้อนกลับ"
              echo ""
-             06
+             SetReboot
         fi
 		exit
 		;;
@@ -118,7 +118,7 @@ case $Start_reboot in
 		echo -e ""
         read -sp " กด Enter เพื่อย้อนกลับ"
         echo ""
-        06
+        SetReboot
         ;;
 		9)
 		clear
@@ -129,6 +129,6 @@ case $Start_reboot in
 		06
 		;;
 		*)
-        06
+        SetReboot
 		;;
 	esac
