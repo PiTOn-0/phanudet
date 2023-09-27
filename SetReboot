@@ -2,12 +2,12 @@
 # Settings Reboot
 clear
 if [ ! -e /usr/local/bin/lemon_zaza ]; then
-	echo '#!/bin/bash' > /usr/local/bin/lemon_zaza
-	echo '' >> /usr/local/bin/lemon_zaza
-	echo 'DATE=$(date +"%m-%d-%Y")' >> /usr/local/bin/lemon_zaza
-	echo 'TIME=$(date +"%T")' >> /usr/local/bin/lemon_zaza
-	echo 'echo "รีบูตเมื่อวันที่ $DATE เวลา $TIME" >> /usr/local/bin/reboot-log' >> /usr/local/bin/lemon_zaza
-	echo '/sbin/shutdown -r now' >> /usr/local/bin/lemon_zaza
+	echo "#!/bin/bash" > /usr/local/bin/lemon_zaza 
+	echo 'tanggal=$(date +"%d-%m-%Y")' >> /usr/local/bin/lemon_zaza 
+	echo 'waktu=$(date +"%T")' >> /usr/local/bin/lemon_zaza 
+	echo 'echo -e "\e[0;37m         Successfully Reboot On $tanggal Time $waktu." >> /root/reboot-log' >> /usr/local/bin/lemon_zaza 
+	echo ""
+	echo '/sbin/shutdown -r now' >> /usr/local/bin/lemon_zaza 
 	chmod +x /usr/local/bin/lemon_zaza
 fi
 
