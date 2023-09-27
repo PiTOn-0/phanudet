@@ -100,7 +100,7 @@ case $Start_reboot in
              SetReboot
 	         else
 		     echo -e ""
-			 echo -e "                          ดูบันทึกรีบูต         "
+			 echo -e "                    บันทึกการรีบูต         "
 			 echo -e ""
 			 cat /root/reboot-log.txt
 			 echo -e ""
