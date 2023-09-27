@@ -12,7 +12,7 @@ if [ ! -e /usr/local/bin/lemon_zaza ]; then
 	chmod +x /usr/local/bin/lemon_zaza
 fi
 
-echo -e ""
+echo -e "${NC}"
 echo -e "        **     SETTINGS REBOOT AUTO     ** "
 echo -e ""
 echo -e "                [1] รีบูตทุกๆ  1 ชั่วโมง"
@@ -93,14 +93,14 @@ case $Start_reboot in
 		7)
 		clear
 		if [ ! -e /root/reboot-log.txt ]; then
-	         echo -e ""
+	         echo -e "${NC}"
 			 echo -e "                    ไม่พบการรีบูต    "
 			 echo -e ""
              read -sp " กด Enter เพื่อย้อนกลับ"
              echo ""
              SetReboot
 	         else
-		     echo -e ""
+		     echo -e "${NC}"
 			 echo -e "                    บันทึกการรีบูต         "
 			 echo -e ""
 			 cat /root/reboot-log.txt
