@@ -22,8 +22,8 @@ echo -e "                    [5] รีบูตทุกๆ  7 วัน"
 echo -e "                    [6] รีบูตทุกๆ  30 วัน"
 echo -e "                    [7] ดูการรีบูตบันทึก"
 echo -e "                    [8] ลบการรีบูต"
-echo -e "                    [9] กลับไปเมนูหลัก"
-echo -e "                    [x] ออก"
+echo -e "                    [9] กลับ"
+echo -e "                    [x] กลับไปเมนูหลัก"
 echo -e ""
 read -p "              เลือกใช้รายการที่ [1-9 or x] : " Start_reboot
 echo -e "" 
@@ -122,12 +122,12 @@ case $Start_reboot in
         ;;
 		9)
 		clear
-		00
+		06
 		exit
 		;;
 		x)
 		clear
-		exit
+		00
 		;;
 		*)
         06
