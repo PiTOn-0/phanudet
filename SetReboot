@@ -83,7 +83,7 @@ case $Start_reboot in
 		clear
 		echo "0 0 1 * * root /usr/local/bin/lemon_zaza" > /etc/cron.d/lemon_zaza
 		echo -e "
-		echo -e "              **   ตั้งค่า Reboot ตอัตโนมัติทุกๆ 30 วันเรียบร้อย   **"
+		echo -e "              **   ตั้งค่า Reboot ตอัตโนมัติทุกๆ 30 วันเรียบร้อย   **  "
 		echo -e "
         read -sp " กด Enter เพื่อย้อนกลับ"
         echo ""
