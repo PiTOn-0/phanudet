@@ -14,18 +14,18 @@ fi
 echo -e ""
 echo -e "    **     SETTINGS REBOOT AUTO  [ SET REBOOT TIME ]   ** "
 echo -e ""
-echo -e "                 [1] set Reboot  1 ชั่วโมง/hour"
-echo -e "                 [2] set Reboot  6 ชั่วโมง/hour"
-echo -e "                 [3] set Reboot  12 ชั่วโมง/hour"
-echo -e "                 [4] set Reboot  1 วัน/Day"
-echo -e "                 [5] set Reboot  7 วัน/Day"
-echo -e "                 [6] set Reboot hour  30 วัน/Day"
-echo -e "                 [7] บันทึกการ Reboot ระบบ"
-echo -e "                 [8] ลบการ Reboot"
+echo -e "                 [1] ตั่งค่า รีบูตทุกๆ 1  ชั่วโมง"
+echo -e "                 [2] ตั่งค่า รีบูตทุกๆ 6  ชั่วโมง"
+echo -e "                 [3] ตั่งค่า รีบูตทุกๆ 12 ชั่วโมง"
+echo -e "                 [4] ตั่งค่า รีบูตทุกๆ 1  วัน"
+echo -e "                 [5] ตั่งค่า รีบูตทุกๆ 7  วัน"
+echo -e "                 [6] ตั่งค่า รีบูตทุกๆ 30 วัน"
+echo -e "                 [7] บันทึกการ รีบูต ระบบ"
+echo -e "                 [8] ลบการ รีบูต"
 echo -e "                 [9] กลับ"
 echo -e "                 [x] กลับไปเมนูหลัก"
 echo -e ""
-read -p "         เลือก menu [1-9 or x] : " Start_reboot
+read -p "    **      เลือก menu [1-9 or x] : " Start_reboot
 echo -e "" 
 clear
 case $Start_reboot in
