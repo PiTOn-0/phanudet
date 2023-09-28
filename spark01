@@ -5,12 +5,12 @@ clear
 echo -e ""
 echo -e "             REBOOT  && SETTINGS REBOOT"
 echo -e ""
-echo -e "                    [1] Reboot"
-echo -e "                    [2] ตั้งเวลา Reboot"
+echo -e "                    [1] รีบูต"
+echo -e "                    [2] ตั้งเวลา รีบูต"
 echo -e "                    [3] กลับไปเมนูหลัก"
 echo -e "                    [x] ออก"
 echo -e ""
-read -p "              เลือกเมนู [1-3 or x] :  " Reboot
+read -p "             เลือกเมนู [1-3 or x] :  " Reboot
 echo -e ""
 clear
 case $Reboot in
