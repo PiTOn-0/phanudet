@@ -12,16 +12,16 @@ if [ ! -e /usr/local/bin/lemon_zaza ]; then
 fi
 
 echo -e ""
-echo -e "        **     SETTINGS REBOOT AUTO     ** "
+echo -e "  **   SYSTEM  SETTINGS REBOOT AUTO  [ SET REBOOT TIME ]   ** "
 echo -e ""
-echo -e "                [1] รีบูตทุกๆ  1 ชั่วโมง"
-echo -e "                [2] รีบูตทุกๆ  6 ชั่วโมง"
-echo -e "                [3] รีบูตทุกๆ  12 ชั่วโมง"
-echo -e "                [4] รีบูตทุกๆ  1 วัน"
-echo -e "                [5] รีบูตทุกๆ  7 วัน"
-echo -e "                [6] รีบูตทุกๆ  30 วัน"
-echo -e "                [7] ดูการรีบูตบันทึก"
-echo -e "                [8] ลบการรีบูต"
+echo -e "                [1] set Reboot  1 ชั่วโมง/hour"
+echo -e "                [2] set Reboot  6 ชั่วโมง/hour"
+echo -e "                [3] set Reboot  12 ชั่วโมง/hour"
+echo -e "                [4] set Reboot  1 วัน/Day"
+echo -e "                [5] set Reboot  7 วัน/Day"
+echo -e "                [6] set Reboot hour  30 วัน/Day"
+echo -e "                [7] บันทึกการ Reboot ระบบ"
+echo -e "                [8] ลบการ Reboot"
 echo -e "                [9] กลับ"
 echo -e "                [x] กลับไปเมนูหลัก"
 echo -e ""
@@ -100,7 +100,7 @@ case $Start_reboot in
              SetReboot
 	         else
 		     echo -e ""
-			 echo -e "         **    บันทึก : สถานะ Reboot ในช่วงวันที่และเวลา    **   "
+			 echo -e "       **    บันทึก :  สถานะ Reboot ในช่วงวันที่และเวลา    **   "
 			 echo -e ""
 			 cat /root/reboot-log.txt
 			 echo -e ""
