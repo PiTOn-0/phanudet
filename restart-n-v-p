@@ -4,12 +4,12 @@
 NC='\033[0m'
 clear
 
-systemctl start pritunl mongodb
-systemctl restart pritunl mongodb
-systemctl enable pritunl mongodb
 service php7.2-fpm restart
 service nginx restart
 service vnstat restart
+systemctl start pritunl mongodb
+systemctl restart pritunl mongodb
+systemctl enable pritunl mongodb
 
 echo ""
 echo -e "\033[1;37m กลับไปที่เมนู \033[1;31m:\033[1;32m 00${NC}"
